@@ -38,13 +38,63 @@ void FillArray(string[] array)
 void PrintArray(string[] array)
 {
     System.Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length - 1; i++)
     {
         System.Console.Write(array[i] + ", ");
     }
     System.Console.Write(array[array.Length - 1] + "]");
+    System.Console.WriteLine();
+}
+
+void Main(string[] array)
+{
+    if(array.Length == 2)
+    {
+        int a = new Random().Next(0, 4);
+        if(a == 0) System.Console.WriteLine("[]");
+        else
+        {
+            System.Console.Write("[");
+            for (int i = 0; i < new Random().Next(0, 2); i++)
+            {
+                System.Console.Write(array[i] + ", ");
+            }
+            System.Console.Write(array[array.Length - 1] + "]");
+        }
+    }
+
+    else if(array.Length == 1)
+    {
+        int b = new Random().Next(0, 4);
+        if(b == 0) System.Console.WriteLine("[]");
+        else
+        {
+            System.Console.Write("[");
+            for (int i = 0; i < new Random().Next(0, 1); i++)
+            {
+                System.Console.Write(array[i] + ", ");
+            }
+            System.Console.Write(array[array.Length - 1] + "]");
+        }
+    }
+
+    else
+    {
+        int c = new Random().Next(0, 4);
+        if(c == 0) System.Console.WriteLine("[]");
+        else
+        {
+            System.Console.Write("[");
+            for (int i = 0; i < new Random().Next(0, 3); i++)
+            {
+                System.Console.Write(array[i] + ", ");
+            }
+            System.Console.Write(array[array.Length - 1] + "]");
+        }
+    }
 }
 
 string[] strings = CreateArray();
 FillArray(strings);
 PrintArray(strings);
+Main(strings);
