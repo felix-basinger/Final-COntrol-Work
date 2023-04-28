@@ -7,7 +7,7 @@
 int Length(string arg)
 {
     int num;
-    System.Console.Write($"Enter: {arg}: ");
+    System.Console.Write($"Enter: {arg} ");
     while(!int.TryParse(Console.ReadLine(), out num) || num < 1)
     {
         System.Console.WriteLine("It's not a number or incorrect data!");
@@ -24,4 +24,27 @@ string[] CreateArray()
     return array;
 }
 
- 
+void FillArray(string[] array)
+{
+    int elems = 1;
+    for (int i = 0; i < array.Length; i++)
+    {
+        System.Console.Write($"Enter your {elems} element: ");
+        array[i] += Console.ReadLine();
+        elems++;
+    }
+}
+
+void PrintArray(string[] array)
+{
+    System.Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        System.Console.Write(array[i] + ", ");
+    }
+    System.Console.Write(array[array.Length - 1] + "]");
+}
+
+string[] strings = CreateArray();
+FillArray(strings);
+PrintArray(strings);
